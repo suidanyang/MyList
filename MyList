@@ -8,7 +8,7 @@ class MyList
 	private:
 		T *a;
 		int size;
-		void quickSort(const int x, const int y)
+		void QuickSort(const int x, const int y)
 		{
 			int i, k;
 			T m, t;
@@ -30,9 +30,9 @@ class MyList
 				}
 			}
 			if(x < k) 
-				quickSort(x, k);
+				QuickSort(x, k);
 			if(i < y) 
-				quickSort(i, y);
+				QuickSort(i, y);
 		}
 	public:
 		MyList()
@@ -208,7 +208,6 @@ class MyList
 				exit(1);
 			}			
 		}//push item into mylist for t times
-		
 		MyList(const MyList &l)
 		{
 			size = l.get_size();
@@ -216,7 +215,6 @@ class MyList
 			for (int i=0; i<size; ++i) 
 				a[i] = l[i];	
 		}//copy another mylist
-    	
 		MyList(T *arr, int len)
 		{
 			try
@@ -238,7 +236,7 @@ class MyList
 			tmp += l2;
 			return tmp;
 		}//combine two MyLists together and return the result
-    		friend MyList operator + (const MyList &l1, const T &item)
+    	friend MyList operator + (const MyList &l1, const T &item)
 		{
 			MyList tmp();
 			tmp.size = l1.size + 1;
@@ -304,7 +302,7 @@ class MyList
     // for example [1, 2, 5, 4, 1]
 		void sort(bool less=true)
 		{
-			quickSort(0, size-1);
+			QuickSort(0, size-1);
 			if (!less) 
 				reverse();
 		}//sort the list with quick sort method
