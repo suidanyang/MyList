@@ -238,7 +238,7 @@ class MyList
 			tmp += l2;
 			return tmp;
 		}//combine two MyLists together and return the result
-    	friend MyList operator + (const MyList &l1, const T &item)
+    		friend MyList operator + (const MyList &l1, const T &item)
 		{
 			MyList tmp();
 			tmp.size = l1.size + 1;
